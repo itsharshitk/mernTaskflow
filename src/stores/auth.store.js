@@ -1,18 +1,18 @@
-import { create } from "zustand";
+// import { create } from "zustand";
 
-const useAuthStore = create((set) => ({
-    user: null,
-    isAuthenticated: false,
+// const useAuthStore = create((set) => ({
+//     user: null,
+//     isAuthenticated: false,
 
-    setUser: (user) => set({
-        user,
-        isAuthenticated: true,
-    }),
+//     setUser: (user) => set({
+//         user,
+//         isAuthenticated: true,
+//     }),
 
-    logoutUser: () => set({
-        user: null,
-        isAuthenticated: false,
-    })
-}));
+//     logoutUser: () => set({
+//         user: null,
+//         isAuthenticated: false,
+//     })
+// }));
 
-export default useAuthStore;
+// export default useAuthStore;
