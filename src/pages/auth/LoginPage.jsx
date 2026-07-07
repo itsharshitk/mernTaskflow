@@ -19,11 +19,11 @@ export default function LoginPage() {
             <h1>Login Form</h1>
 
             <input 
-            {...register("username")}
-            className="username"
-            placeholder="Enter your username"
+            {...register("email")}
+            className="email"
+            placeholder="Enter your email"
             />
-            <span className="text-red-500">{errors.username?.message}</span>
+            <span className="text-red-500">{errors.email?.message}</span>
 
             <input 
             type="password"

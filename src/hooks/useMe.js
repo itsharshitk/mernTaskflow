@@ -8,3 +8,5 @@ const useMe = () => {
         retry: false
     });
 }
+
+export default useMe;

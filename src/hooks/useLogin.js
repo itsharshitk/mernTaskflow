@@ -14,11 +14,15 @@ export default function useLogin() {
         mutationFn: login,
 
         onSuccess: (response) => {
-            console.log(response);
+
+            const respData = response.data.data;
+
+            localStorage.setItem("accessToken", respData.accessToken);
 
             // setUser(response.data.user);
-            queryClient.setQueryData(["me"], response.data);
+            queryClient.setQueryData(["me"], respData);
 
+            console.log("Login REsonse==>>", respData);
             navigate("/dashboard");
         },
 
