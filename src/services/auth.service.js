@@ -1,8 +1,10 @@
-import api from "./api";
+import api from "../lib/axios";
 
 export default async function login(credentials) {
     
-    const response = await api.post("/auth/login", credentials)
+    const response = await api.post("/auth/login", credentials, {
+        skipAuthRefresh: true,
+    })
     
     return response;
 }
@@ -15,7 +17,9 @@ export async function getMe() {
 }
 
 export const refresh = async () => {
-    const res = await api.post("/auth/refresh");
+    const res = await api.post("/auth/refresh", {}, {
+        skipAuthRefresh: true,
+    });
 
     return res.data;
 }
