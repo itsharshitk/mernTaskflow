@@ -1,6 +1,8 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
+import { getErrorMessage } from "../utils/error.util";
 import login from "../services/auth.service";
 import { setAccessToken } from "../lib/token";
 // import useAuthStore from "../stores/auth.store";
@@ -25,9 +27,7 @@ export default function useLogin() {
         },
 
         onError: (error) => {
-            const message = error.response?.data?.message ?? "Something went wrong";
-
-            console.error(message);
+            toast.error(getErrorMessage(error));
         }
     });
 }
