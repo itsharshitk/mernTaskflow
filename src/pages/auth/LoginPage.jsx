@@ -15,12 +15,12 @@ export default function LoginPage() {
     }
 
     return(
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <h1>Login Form</h1>
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center justify-center gap-3">
+            <h1 className="text-2xl font-bold p-5">Login Form</h1>
 
             <input 
             {...register("email")}
-            className="email"
+            className="email px-3 py-2 bg-blue-50 w-100"
             placeholder="Enter your email"
             />
             <span className="text-red-500">{errors.email?.message}</span>
@@ -28,12 +28,12 @@ export default function LoginPage() {
             <input 
             type="password"
             {...register("password")}
-            className="password"
+            className="password px-3 py-2 bg-blue-50 w-100"
             placeholder="Enter your password"
             />
             <span className="text-red-500">{errors.password?.message}</span>
 
-            <button className="px-5 py-2 bg-blue-500 text-white" disabled={isPending}>{isPending?"Loggin In...":"Login"}</button>
+            <button className="px-5 py-2 bg-blue-500 text-white w-100" disabled={isPending}>{isPending?"Loggin In...":"Login"}</button>
         </form>
     )
 }

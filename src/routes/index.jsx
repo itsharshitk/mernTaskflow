@@ -6,8 +6,8 @@ import DashboardLayout from "../layouts/DashboardLayout";
 
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 
-import LoginPage from "../pages/auth/Loginpage";
-import RegisterPage from "../pages/auth/registerPage";
+import LoginPage from "../pages/auth/LoginPage";
+import RegisterPage from "../pages/auth/RegisterPage";
 import DashboardPage from "../pages/dashboard/DashboardPage";
 
 const router = createBrowserRouter([
