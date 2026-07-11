@@ -11,7 +11,6 @@ export async function refreshAccessToken() {
     refreshPromise = (async () => {
         try {
             const response = await refresh();
-            console.log("refresh func setting access token value: ", response.data.accessToken);
     
             setAccessToken(response.data.accessToken);
     

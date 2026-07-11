@@ -1,19 +1,24 @@
 import { create } from "zustand";
 
 const useSidebarStore = create((set) => ({
-    isOpen: true,
+    isCollapsed: false,
+    isMobileOpen: false,
 
-    toggle: () => set((state) => ({
-        isOpen: !state.isOpen
+    toggleCollapsed: () => set((state) => ({
+        isCollapsed: !state.isCollapsed
     })),
 
-    open: () => set({
-        isOpen: true
+    openMobile: () => set({
+        isMobileOpen: true
     }),
 
-    close: () => set({
-        isOpen: false
+    closeMobile: () => set({
+        isMobileOpen: false
     }),
+
+    toggleMobile: () => set((state) => ({
+        isMobileOpen: !state.isMobileOpen
+    })),
 }))
 
 export default useSidebarStore;
